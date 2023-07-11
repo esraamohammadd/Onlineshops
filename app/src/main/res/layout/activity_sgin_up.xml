@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:background="#D0E1DA"
-    tools:context=".MainActivity">
+    tools:context="com.example.ui.sginUp">
 
     <TextView
         android:id="@+id/textView"
@@ -75,6 +75,7 @@
                 android:paddingStart="20dp" />
 
             <EditText
+
                 android:id="@+id/et_confirm_pass"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -85,7 +86,7 @@
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="confirm your passaword"
-                android:inputType="textVisiblePassword"
+                android:inputType="textPassword"
                 android:paddingStart="20dp" />
             <Button
                 android:id="@+id/bt_sginUp"

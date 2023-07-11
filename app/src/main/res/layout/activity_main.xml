@@ -71,7 +71,7 @@
                 android:drawablePadding="10dp"
                 android:ems="10"
                 android:hint="enter your passaword"
-                android:inputType="textVisiblePassword"
+                android:inputType="textPassword"
                 android:paddingStart="20dp" />
 
             <Button
