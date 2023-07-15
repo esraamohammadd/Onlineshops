@@ -9,12 +9,19 @@
         <entry key="..\:/Online_shop/app/src/main/res/drawable/buttonshape.xml" value="0.1" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/home_.xml" value="0.1145" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/ic_baseline_directions_bike_24.xml" value="0.1145" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.1" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_botton_navigation.xml" value="0.16168478260869565" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_customer.xml" value="0.1" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_cutomer.xml" value="0.1" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_main.xml" value="0.16757246376811594" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_sgin_up.xml" value="0.16168478260869565" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_sginup.xml" value="0.1" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_add.xml" value="0.16168478260869565" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_chat.xml" value="0.16168478260869565" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_order.xml" value="0.16168478260869565" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_product.xml" value="0.16168478260869565" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/pruduct_layout.xml" value="0.25" />
+        <entry key="..\:/Online_shop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19947916666666668" />
       </map>
     </option>
   </component>
