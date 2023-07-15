@@ -10,13 +10,12 @@
         android:id="@+id/framLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_above="@+id/bottomNavigationView"
+        android:layout_alignParentTop="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        >
-
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -25,6 +24,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_nav_menu"
         >
 
