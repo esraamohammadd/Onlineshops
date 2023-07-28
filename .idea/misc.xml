@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Online_shop/app/src/main/res/drawable-v24/email.xml" value="0.1165" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable-v24/ic__video.xml" value="0.136" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/_store.xml" value="0.1145" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/baseline_shopping.xml" value="0.1145" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/buttonshape.xml" value="0.1" />
@@ -19,6 +20,7 @@
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_sginup.xml" value="0.1" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_add.xml" value="0.2" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_chat.xml" value="0.16168478260869565" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_description.xml" value="0.20416666666666666" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_order.xml" value="0.16168478260869565" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_product.xml" value="0.16168478260869565" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/pruduct_layout.xml" value="0.25" />

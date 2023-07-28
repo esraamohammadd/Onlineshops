@@ -14,7 +14,7 @@ import com.example.online_shop.databinding.ActivityBottomNavigationBinding;
 import com.google.android.material.navigation.NavigationBarView;
 
 
-public class BottomNavigation extends AppCompatActivity {
+public class Seller extends AppCompatActivity {
 
     ActivityBottomNavigationBinding binding ;
     @Override
