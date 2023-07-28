@@ -14,31 +14,25 @@
         android:theme="@style/Theme.Online_shop"
         tools:targetApi="31">
         <activity
-            android:name="com.example.ui.Seller"
-            android:exported="false" >
-
-
-
-        </activity>
-        <activity
-            android:name="com.example.ui.Customer"
-            android:exported="false" >
-
-
-        </activity>
-        <activity
-            android:name="com.example.ui.sginUp"
+            android:name=".MainActivity2"
             android:exported="false" />
         <activity
-            android:name="com.example.ui.MainActivity"
+            android:name=".Seller"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Customer"
+            android:exported="false"></activity>
+        <activity
+            android:name=".sginUp"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
     </application>
 
