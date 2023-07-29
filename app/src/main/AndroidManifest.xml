@@ -14,19 +14,16 @@
         android:theme="@style/Theme.Online_shop"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".Seller"
+            android:name="com.example.ui.Seller"
             android:exported="false"></activity>
         <activity
-            android:name=".Customer"
+            android:name="com.example.ui.Customer"
             android:exported="false"></activity>
         <activity
-            android:name=".sginUp"
+            android:name="com.example.ui.sginUp"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
