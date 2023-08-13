@@ -1,9 +1,9 @@
 package com.example.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,19 +13,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.online_shop.R;
-import com.example.pojo.ChatModel;
-import com.example.pojo.Order;
 import com.example.pojo.Product;
-import com.example.ui.Customer;
 import com.example.ui.DescriptionFragment;
-import com.example.ui.OrderFragment;
-import com.example.ui.ProductFragment;
-import com.example.ui.Seller;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -43,12 +36,14 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
 
     Context context;
     ArrayList<Product>products;
+    String isAdmin;
 
 
 
-    public Product_Adapter(Context context, ArrayList<Product> products) {
+    public Product_Adapter(Context context, ArrayList<Product> products,String isAdmin) {
         this.context = context;
         this.products = products;
+        this.isAdmin = isAdmin;
 
     }
 
@@ -67,7 +62,6 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
         Product product = products.get(position);
         // getImg
           getImage(holder.img_product,products.get(position));
-       // holder.img_product.setImageURI(Uri.parse(products.get(position).getImg()));
 
         holder.tv_name.setText(product.getName());
        holder.img_description.setOnClickListener(new View.OnClickListener() {
@@ -85,8 +79,10 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
        });
         holder.tv_price.setText(product.getPrice()+" "+product.getCoin());
 
-        if (context.equals(new OrderFragment()) )
-        {holder.img_addTo_basket.setVisibility(View.GONE);}else {
+
+        if (isAdmin.equals("yes")) {
+            holder.img_addTo_basket.setVisibility(View.GONE);
+        }else {
             holder.img_addTo_basket.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -96,7 +92,7 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(context, "add to basket", Toast.LENGTH_SHORT).show();
-
+//                            holder.img_addTo_basket.setImageDrawable(new ColorDrawable(R.drawable.back_btn));
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
@@ -111,6 +107,7 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
             });
         }
         }
+
 
 
     @Override
@@ -165,21 +162,6 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
 
     }
 
-    public void setOrder(Order order, Product product)
-    {
-        Order orders = new Order(order.getEmail(),product);
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
-        reference.child("orders").child(order.getEmail()).setValue(product).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                Toast.makeText(context.getApplicationContext(), "add to basket", Toast.LENGTH_SHORT).show();
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(context.getApplicationContext(), "failed to add", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+
 
 }

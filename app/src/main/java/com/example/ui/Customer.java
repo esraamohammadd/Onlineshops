@@ -56,7 +56,7 @@ public class Customer extends AppCompatActivity {
 
         rec_products = findViewById(R.id.rec_customer);
 //adapter
-        product_adapter = new Product_Adapter(Customer.this, products);
+        product_adapter = new Product_Adapter(Customer.this, products,"NO");
 
 
         reference = FirebaseDatabase.getInstance().getReference();

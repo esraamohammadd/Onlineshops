@@ -82,27 +82,14 @@ public class ProductFragment extends Fragment {
       View view= inflater.inflate(R.layout.fragment_product, container, false);
 
         rec_products =view.findViewById(R.id.fr_rec_admin);
-        product_adapter = new Product_Adapter(getContext(), products);
+        product_adapter = new Product_Adapter(getContext(), products,"yes");
 
 
         reference = FirebaseDatabase.getInstance().getReference();
 
         getPruduct();
 
-//        Product product1 = new Product();
-//        Product product2 = new Product();
-//        Product product3 = new Product();
-//        Product product4 = new Product();
-//        Product product5 = new Product(R.drawable._store,"mobile","65fer","50 ",
-//                "description oppo phone A93 ytrgtdf camera hd socket hfyg try gmail","LE");
-//
-//
-//        products.add(product5);
-//        products.add(product2);
-//        products.add(product3);
-//        products.add(product4);
 
-        //display products in recyclerView
         RecyclerView.LayoutManager lm = new LinearLayoutManager(getContext());
 
         rec_products.setLayoutManager(lm);

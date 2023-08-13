@@ -82,7 +82,7 @@ public class OrderFragment extends Fragment {
 
 
         rec_products =view.findViewById(R.id.fr_rec_oreder);
-        product_adapter = new Product_Adapter(getContext(), products);
+        product_adapter = new Product_Adapter(getActivity(), products,"yes");
 
 
         reference = FirebaseDatabase.getInstance().getReference();
@@ -103,7 +103,7 @@ public class OrderFragment extends Fragment {
 //        products.add(product4);
 
         //display products in recyclerView
-        RecyclerView.LayoutManager lm = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager lm = new LinearLayoutManager(getActivity());
 
         rec_products.setLayoutManager(lm);
         rec_products.setAdapter(product_adapter);
