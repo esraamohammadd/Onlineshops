@@ -7,7 +7,8 @@
     app:cardCornerRadius="50dp"
     app:cardElevation="50dp"
     app:cardPreventCornerOverlap="true"
-    android:layout_margin="5dp">
+    android:layout_margin="5dp"
+    android:background="@color/white">
 
 <RelativeLayout
     android:layout_width="match_parent"

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Online_shop/app/src/main/res/drawable-v24/background_left.xml" value="0.129" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable-v24/email.xml" value="0.1165" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable-v24/ic__video.xml" value="0.136" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/_store.xml" value="0.1145" />
@@ -11,20 +12,40 @@
         <entry key="..\:/Online_shop/app/src/main/res/drawable/home_.xml" value="0.1145" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/ic_baseline_directions_bike_24.xml" value="0.1145" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/info.xml" value="0.136" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/opo_msg_back.xml" value="0.133" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/round_back_light_10.xml" value="0.133" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/round_back_theme_1000.xml" value="0.133" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/search_icon.xml" value="0.133" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_bottom_navigation.xml" value="0.1" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_botton_navigation.xml" value="0.16168478260869565" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_chat.xml" value="0.19947916666666668" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_customer.xml" value="0.1" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_cutomer.xml" value="0.1" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_login.xml" value="0.19947916666666668" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_main.xml" value="0.16757246376811594" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_main2.xml" value="0.19947916666666668" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_message.xml" value="0.18541666666666667" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_seller.xml" value="0.19947916666666668" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_sgin_up.xml" value="0.16168478260869565" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_sginup.xml" value="0.1" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_start.xml" value="0.19947916666666668" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_start_ativity.xml" value="0.19947916666666668" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/chat_item_left.xml" value="0.2329683698296837" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/chat_item_right.xml" value="0.19947916666666668" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/chat_layout.xml" value="0.19947916666666668" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_add.xml" value="0.2" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_chat.xml" value="0.16168478260869565" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_chats.xml" value="0.19947916666666668" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_description.xml" value="0.20416666666666666" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_order.xml" value="0.16168478260869565" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_product.xml" value="0.16168478260869565" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_profile.xml" value="0.19947916666666668" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/fragment_users.xml" value="0.19947916666666668" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/message_adapter_layout.xml" value="0.1984375" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/pruduct_layout.xml" value="0.25" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/user_item.xml" value="0.19947916666666668" />
         <entry key="..\:/Online_shop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.19947916666666668" />
+        <entry key="..\:/Online_shop/app/src/main/res/menu/menu.xml" value="0.19947916666666668" />
       </map>
     </option>
   </component>

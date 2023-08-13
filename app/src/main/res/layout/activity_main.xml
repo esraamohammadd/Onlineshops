@@ -8,6 +8,7 @@
     android:background="#D0E1DA"
     tools:context="com.example.ui.MainActivity">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -45,6 +46,19 @@
             android:orientation="vertical"
             android:padding="10dp">
 
+
+            <EditText
+                android:id="@+id/et_sginMobile"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="10dp"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="enter your email"
+                android:inputType="textEmailAddress"
+                android:paddingStart="20dp" />
 
             <EditText
                 android:id="@+id/et_sginemail"

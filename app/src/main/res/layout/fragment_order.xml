@@ -2,15 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context="com.example.ui.OrderFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fr_rec_oreder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#90CAF9"
-        android:gravity="center"
-        android:text="order"
-        android:textSize="20sp" />
+        android:background="@color/white"/>
 
 </FrameLayout>

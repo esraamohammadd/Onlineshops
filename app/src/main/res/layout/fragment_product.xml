@@ -2,14 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     tools:context="com.example.ui.ProductFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fr_rec_admin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#19DA03"
-        android:gravity="center"
-        android:text="products"
-        android:textSize="20sp" />
+        android:background="@color/white"/>
 </FrameLayout>
