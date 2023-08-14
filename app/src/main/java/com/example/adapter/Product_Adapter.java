@@ -3,7 +3,6 @@ package com.example.adapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,12 +37,15 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
     ArrayList<Product>products;
     String isAdmin;
 
+    DatabaseReference databaseReference;
 
 
     public Product_Adapter(Context context, ArrayList<Product> products,String isAdmin) {
         this.context = context;
         this.products = products;
         this.isAdmin = isAdmin;
+
+
 
     }
 
@@ -61,6 +63,8 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
     {
         Product product = products.get(position);
         // getImg
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
           getImage(holder.img_product,products.get(position));
 
         holder.tv_name.setText(product.getName());
@@ -80,31 +84,70 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
         holder.tv_price.setText(product.getPrice()+" "+product.getCoin());
 
 
-        if (isAdmin.equals("yes")) {
+        if (isAdmin.equals("yes|product")) {
             holder.img_addTo_basket.setVisibility(View.GONE);
-        }else {
+            holder.img_remove.setVisibility(View.VISIBLE);
+            holder.img_remove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    databaseReference.child("products").child(product.getCode()).removeValue();
+                }
+            });
+
+        }else if (isAdmin.equals("yes|orders"))
+        {
+            holder.img_addTo_basket.setVisibility(View.GONE);
+            holder.img_remove.setVisibility(View.GONE);
+        }else
+        {
+            holder.img_addTo_basket.setVisibility(View.VISIBLE);
+            holder.img_remove.setVisibility(View.GONE);
             holder.img_addTo_basket.setOnClickListener(new View.OnClickListener() {
+
+
                 @Override
                 public void onClick(View view) {
 
-                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-                    databaseReference.child("orders").child(product.getCode()).setValue(product).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            Toast.makeText(context, "add to basket", Toast.LENGTH_SHORT).show();
-//                            holder.img_addTo_basket.setImageDrawable(new ColorDrawable(R.drawable.back_btn));
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(context, "can't add to basket", Toast.LENGTH_SHORT).show();
 
-                        }
-                    });
+
+                    {
+
+
+
+                        databaseReference.child("orders").child(product.getCode()).setValue(product).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(context, "add to basket", Toast.LENGTH_SHORT).show();
+                                holder.img_remove.setVisibility(View.VISIBLE);
+                                holder.img_addTo_basket.setVisibility(View.GONE);
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(context, "can't add to basket", Toast.LENGTH_SHORT).show();
+
+                            }
+                        });
+                    }
 
 
                 }
             });
+
+            holder.img_remove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    databaseReference.child("orders").child(product.getCode()).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            holder.img_addTo_basket.setVisibility(View.VISIBLE);
+                            holder.img_remove.setVisibility(View.GONE);
+                            Toast.makeText(context, "delete from basket", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            });
+
         }
         }
 
@@ -117,7 +160,7 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
 
     public class product_ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView img_product,img_description, img_addTo_basket;
+        ImageView img_product,img_description, img_addTo_basket,img_remove;
         TextView tv_name ,tv_price;
 
 
@@ -129,6 +172,7 @@ public class Product_Adapter extends RecyclerView.Adapter<Product_Adapter.produc
             img_addTo_basket = itemView.findViewById(R.id.img_basket);
             tv_name = itemView.findViewById(R.id.tv_name);
             tv_price = itemView.findViewById(R.id.tv_price);
+            img_remove = itemView.findViewById(R.id.img_remove);
 
 
         }

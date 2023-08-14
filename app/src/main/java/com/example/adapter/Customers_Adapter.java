@@ -24,6 +24,7 @@ public class Customers_Adapter extends RecyclerView.Adapter<Customers_Adapter.Ch
 
 
 
+
     public Customers_Adapter(Context context, ArrayList<ChatModel> chats) {
         this.context = context;
         this.chatModels = chats;
@@ -45,14 +46,14 @@ public class Customers_Adapter extends RecyclerView.Adapter<Customers_Adapter.Ch
         ChatModel chatModel = chatModels.get(position);
 
 
-        holder.email.setText(chatModel.getMobile());
+        holder.mobile.setText(chatModel.getMobile());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, Chat.class);
-                intent.putExtra("email","admin@admin.com");
-                intent.putExtra("mobile","adminMobile");
-                intent.putExtra("customerMobile",holder.email.getText().toString());
+                intent.putExtra("admin_email","admin@admin.com");
+                intent.putExtra("admin_mobile","adminMobile");
+                intent.putExtra("customerMobile",holder.mobile.getText().toString());
                 context.startActivity(intent);
             }
         });
@@ -68,14 +69,14 @@ public class Customers_Adapter extends RecyclerView.Adapter<Customers_Adapter.Ch
     public class Chat_ViewHolder extends RecyclerView.ViewHolder {
 
 
-        TextView email,lastMsg;
+        TextView mobile;
 
 
         public Chat_ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            lastMsg = itemView.findViewById(R.id.lastMessage);
-            email = itemView.findViewById(R.id.email);
+
+            mobile = itemView.findViewById(R.id.mobile);
 
 
 

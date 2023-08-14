@@ -6,13 +6,26 @@
         <entry key="..\:/Online_shop/app/src/main/res/drawable-v24/background_left.xml" value="0.129" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable-v24/email.xml" value="0.1165" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable-v24/ic__video.xml" value="0.136" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/_store.xml" value="0.1145" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/add_.xml" value="0.135" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/back_btn.xml" value="0.135" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/baseline_shopping.xml" value="0.1145" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/bike.xml" value="0.135" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/buttonshape.xml" value="0.1" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/chat.xml" value="0.135" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/delete.xml" value="0.135" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/email.xml" value="0.135" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/etittext_shape.xml" value="0.133" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/home_.xml" value="0.1145" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/ic_baseline_directions_bike_24.xml" value="0.1145" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.135" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/ic_launcher_background.xml" value="0.135" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/info.xml" value="0.136" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/my_msg_back.xml" value="0.135" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/opo_msg_back.xml" value="0.133" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/password.xml" value="0.133" />
+        <entry key="..\:/Online_shop/app/src/main/res/drawable/phone_number.xml" value="0.133" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/round_back_light_10.xml" value="0.133" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/round_back_theme_1000.xml" value="0.133" />
         <entry key="..\:/Online_shop/app/src/main/res/drawable/search_icon.xml" value="0.133" />
@@ -22,7 +35,7 @@
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_customer.xml" value="0.1" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_cutomer.xml" value="0.1" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_login.xml" value="0.19947916666666668" />
-        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_main.xml" value="0.16757246376811594" />
+        <entry key="..\:/Online_shop/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_main2.xml" value="0.19947916666666668" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_message.xml" value="0.18541666666666667" />
         <entry key="..\:/Online_shop/app/src/main/res/layout/activity_seller.xml" value="0.19947916666666668" />

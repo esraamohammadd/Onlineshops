@@ -82,7 +82,7 @@ public class ProductFragment extends Fragment {
       View view= inflater.inflate(R.layout.fragment_product, container, false);
 
         rec_products =view.findViewById(R.id.fr_rec_admin);
-        product_adapter = new Product_Adapter(getContext(), products,"yes");
+        product_adapter = new Product_Adapter(getContext(), products,"yes|product");
 
 
         reference = FirebaseDatabase.getInstance().getReference();

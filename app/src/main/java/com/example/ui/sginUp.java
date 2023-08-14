@@ -27,8 +27,6 @@ public class sginUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-      //   binding = ActivitySginUpBinding.inflate(getLayoutInflater());
         setContentView(R.layout.activity_sgin_up);
 
         getSupportActionBar().hide();
@@ -38,10 +36,7 @@ public class sginUp extends AppCompatActivity {
         mAthu = FirebaseAuth.getInstance();
 
 
-//        et_email = binding.etSginUpemail;
-//        et_password = binding.etPassword;
-//        et_confirm_pass = binding.etConfirmPass;
-//        btn_sginUp = binding.btSginUp;
+
 
 btn_sginUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +44,13 @@ btn_sginUp.setOnClickListener(new View.OnClickListener() {
             {
                 String email = et_email.getText().toString();
                String password = et_password.getText().toString();
-                sginUpUser(email,password);
+               if (email.isEmpty()||password.isEmpty())
+               {
+                   et_email.setError("required");
+                 et_password.setError("required");
+               }else {
+                   sginUpUser(email, password);
+               }
 
 
             }

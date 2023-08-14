@@ -99,51 +99,13 @@ public class ChatFragment extends Fragment {
     }
     public void getCustomers(){
 
-      Intent intent =getActivity().getIntent();
-     String mobile = intent.getStringExtra("mobile");
-        databaseReference.child("customers").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-
-
-                for (DataSnapshot snap : snapshot.getChildren())
-                {
-                    ChatModel chatModel =snap.getValue(ChatModel.class);
-
-
-                    if (!chatModel.getEmailUser().equals("admin@admin.com")) {
-                        chats.add(chatModel);
-
-                    }customers_adapter.notifyDataSetChanged();
-
-
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-
-    public void getCustomer(){
-
-        Intent intent =getActivity().getIntent();
-        String mobile = intent.getStringExtra("mobile");
         databaseReference.child("customers").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
                 ChatModel chatModel = snapshot.getValue(ChatModel.class);
-
-                if (!chatModel.getEmailUser().equals("admin@admin.com")) {
-                    chats.add(chatModel);
-                    customers_adapter.notifyDataSetChanged();
-                }
-
+               chats.add(chatModel);
+                customers_adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -167,6 +129,9 @@ public class ChatFragment extends Fragment {
             }
         });
     }
+
+
+
 
 }
 

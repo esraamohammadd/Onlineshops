@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     EditText et_email, et_password, et_mobile;
     Button btn_sginIn ;
     FirebaseAuth mAuth;
-    DatabaseReference databaseReference;
 
 
     @Override
@@ -46,17 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://online-shop-b919f-default-rtdb.firebaseio.com/");
 
-        tv_sginUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                  Intent intent = new Intent(MainActivity.this,sginUp.class);
-                  startActivity(intent);
-
-            }
-        });
 
         btn_sginIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
 
                 String email = et_email.getText().toString();
                 String password = et_password.getText().toString();
+                String mobile = et_mobile.getText().toString();
+
+                if (mobile.isEmpty()||email.isEmpty()||password.isEmpty())
+                {   et_mobile.setError("required");
+                    et_email.setError("required");
+                    et_password.setError("required");
+
+                }else
                 if (email.equals("admin@admin.com")&& password.equals("123456")){
 
 
@@ -82,7 +81,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        tv_sginUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent intent = new Intent(MainActivity.this,sginUp.class);
+                startActivity(intent);
+
+            }
+        });
 
 
     }
@@ -111,29 +118,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    private void switchUser(String adminEmail)
-//    {
-//        if (et_email.getText().toString().equals(adminEmail))
-//        {
-//            Intent intent = new Intent(MainActivity.this, Seller.class);
-//            startActivity(intent);
-//        }else
-//        {
-//            Intent intent = new Intent(MainActivity.this, Customer.class);
-//            startActivity(intent);
-//        }
-//
-//    }
 
-
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//
-//        if (FirebaseAuth.getInstance().getCurrentUser()!= null)
-//        {
-//            startActivity(new Intent( MainActivity.this,Customer.class));
-//            finish();
-//        }
-//    }
 }

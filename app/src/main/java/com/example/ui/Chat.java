@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.adapter.Chat_Adapter;
+import com.example.adapter.Customers_Adapter;
 import com.example.online_shop.R;
 import com.example.pojo.ChatModel;
 import com.google.firebase.database.ChildEventListener;
@@ -29,7 +30,7 @@ import java.util.UUID;
 public class Chat extends AppCompatActivity {
 
     TextView tv_AdminName;
-    ImageView img_back ,img_send;
+    ImageView img_send;
     EditText et_msg;
     RecyclerView rec_chat;
     Chat_Adapter chat_adapter;
@@ -37,6 +38,8 @@ public class Chat extends AppCompatActivity {
 
     String email;
     String mobile ;
+    String admin_email;
+    String admin_mobile ;
     String customerMobile;
 
 
@@ -46,22 +49,25 @@ public class Chat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        getSupportActionBar().hide();
 
         tv_AdminName = findViewById(R.id.name);
         et_msg = findViewById( R.id.messageEditTxt);
         img_send = findViewById(R.id.sendBtn);
-        img_back = findViewById(R.id.backBtn);
         rec_chat = findViewById(R.id.chattingRecyclerView);
 
         Intent intent = getIntent();
 
-        email = intent.getStringExtra("email");
-        mobile = intent.getStringExtra("mobile");
+        email = intent.getStringExtra(Customer.ARG_EMAIL);
+        mobile = intent.getStringExtra(Customer.ARG_MOBILE);
+        admin_email = intent.getStringExtra("admin_email");
+        admin_mobile = intent.getStringExtra("admin_mobile");
+
         customerMobile = intent.getStringExtra("customerMobile");
 
 
 
-        tv_AdminName.setText(email);
+        tv_AdminName.setText(mobile);
         chatModels = new ArrayList<>();
         chat_adapter = new Chat_Adapter(this,chatModels);
 
@@ -76,34 +82,6 @@ public class Chat extends AppCompatActivity {
 
 
 
-//        databaseReference.child("chat").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                for(DataSnapshot chat_snapshot : snapshot.getChildren())
-//
-//                {
-//
-//
-//                  key = (int) chat_snapshot.getChildrenCount();
-//                    ChatModel chatModel = chat_snapshot.getValue(ChatModel.class);
-//
-//                    chat_adapter.addChat(chatModel);
-//                    chat_adapter.notifyDataSetChanged();
-//
-//
-//
-//                }
-//
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//        rec_chat.setAdapter(chat_adapter);
 
 
         img_send.setOnClickListener(new View.OnClickListener() {
@@ -113,13 +91,7 @@ public class Chat extends AppCompatActivity {
                 sendMsg();
             }
         });
-        img_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                startActivity(new Intent( Chat.this,Customer.class));
-            }
-        });
     }
 
     public  void sendMsg()
@@ -127,16 +99,21 @@ public class Chat extends AppCompatActivity {
 
         String id = UUID.randomUUID().toString();
         ChatModel chatModel;
-             if (email.equals("admin@admin.com"))
+             if (admin_email != null)
              {
-                 chatModel = new ChatModel(et_msg.getText().toString(), mobile, email, customerMobile);
+                 chatModel = new ChatModel(et_msg.getText().toString(), id, admin_email, customerMobile);
+
+                 databaseReference.child("chat").child(chatModel.getMobile()).child(id).setValue(chatModel);
+                 databaseReference.child("customers").child(customerMobile).setValue(chatModel);
              }
           else {
-                 chatModel = new ChatModel(et_msg.getText().toString(), mobile, email, mobile);
+                 chatModel = new ChatModel(et_msg.getText().toString(), id, email, mobile);
+                 databaseReference.child("chat").child(chatModel.getMobile()).child(id).setValue(chatModel);
+                 databaseReference.child("customers").child(mobile).setValue(chatModel);
+
              }
 
-           databaseReference.child("chat").child(chatModel.getMobile()).child(id).setValue(chatModel);
-           databaseReference.child("customers").child(mobile).setValue(chatModel);
+
            et_msg.setText("");
 
     }
@@ -177,11 +154,12 @@ public class Chat extends AppCompatActivity {
 
     public void getChats(){
         String phone;
-        if (email.equals("admin@admin.com")) {
+
+        if (admin_mobile!=null) {
             phone = customerMobile;
-        }else {
+        }else if (mobile != null){
             phone=mobile;
-        }
+        }else{phone = "000";}
         databaseReference.child("chat").child(phone).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {

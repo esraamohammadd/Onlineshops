@@ -37,6 +37,9 @@ import java.util.ArrayList;
 
 public class Customer extends AppCompatActivity {
 
+    final static String ARG_EMAIL = "email";
+    final static String ARG_MOBILE = "mobile";
+
     RecyclerView rec_products;
     ArrayList<Product> products = new ArrayList<>();
     Product_Adapter product_adapter;
@@ -47,15 +50,17 @@ public class Customer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer);
 
+        getSupportActionBar().hide();
+
+        btn_chat = findViewById(R.id.fbtn_chat);
+        rec_products = findViewById(R.id.rec_customer);
+
         Intent intent = getIntent();
         String email = intent.getStringExtra(MainActivity.EMAIL_ARG);
         String mobile = intent.getStringExtra(MainActivity.MOBILE_ARG);
-        btn_chat = findViewById(R.id.fbtn_chat);
-        getSupportActionBar().hide();
 
 
-        rec_products = findViewById(R.id.rec_customer);
-//adapter
+
         product_adapter = new Product_Adapter(Customer.this, products,"NO");
 
 
@@ -63,23 +68,10 @@ public class Customer extends AppCompatActivity {
 
         getPruduct();
 
-//        Product product1 = new Product();
-//        Product product2 = new Product();
-//        Product product3 = new Product();
-//        Product product4 = new Product();
-//        Product product5 = new Product(R.drawable._store,"mobile","65fer","50 ",
-//                "description oppo phone A93 ytrgtdf camera hd socket hfyg try gmail","LE");
-//
-//
-//        products.add(product5);
-//        products.add(product2);
-//        products.add(product3);
-//        products.add(product4);
 
-        //display products in recyclerView
-        RecyclerView.LayoutManager lm = new LinearLayoutManager(Customer.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Customer.this);
 
-        rec_products.setLayoutManager(lm);
+        rec_products.setLayoutManager(layoutManager);
         rec_products.setAdapter(product_adapter);
 
 
@@ -87,8 +79,8 @@ public class Customer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Customer.this,Chat.class);
-                intent.putExtra("email",email);
-                intent.putExtra("mobile",mobile);
+                intent.putExtra(ARG_EMAIL,email);
+                intent.putExtra(ARG_MOBILE,mobile);
                 startActivity(intent);
             }
         });

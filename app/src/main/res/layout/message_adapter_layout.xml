@@ -27,12 +27,13 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="60dp"
                 android:layout_marginRight="20dp"
+                android:layout_alignLeft="@+id/profilePic"
                 android:layout_centerVertical="true"
-                android:layout_toRightOf="@+id/profilePic">
+             >
                 <TextView
-                    android:id="@+id/email"
+                    android:id="@+id/mobile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
@@ -41,16 +42,7 @@
                     android:text="email"
                     />
 
-                <TextView
-                    android:id="@+id/lastMessage"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@color/theme_color_80"
-                    />
+
 
             </LinearLayout>
 
